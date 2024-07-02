@@ -1,2 +1,52 @@
 # Jungle
-An Ecommerce Website to sell plants to freshen up your home
+
+A mini e-commerce application built with Rails 6.1 that sells plants and other green flora.
+
+## Setup
+
+1. Run `bundle install` to install dependencies
+2. Create `config/database.yml` by copying `config/database.example.yml`
+3. Create `config/secrets.yml` by copying `config/secrets.example.yml`
+4. Run `bin/rails db:reset` to create, load and seed db
+5. Create .env file based on .env.example
+6. Sign up for a Stripe account
+7. Put Stripe (test) keys into appropriate .env vars
+8. Run `bin/rails s -b 0.0.0.0` to start the server
+
+## In Action
+- The main page
+
+!["Welcome to the jungle"](https://github.com/Eds-Dbug/jungle-rails/blob/master/public/images/Welcome_to_the_jungle.png)
+
+- One of the categories of purchasable plants "Evergreens"
+
+!["Evergreens"](https://github.com/Eds-Dbug/jungle-rails/blob/master/public/images/Evergreens.png)
+
+- Shopping for trees
+
+!["Shopping for Greens"](https://github.com/Eds-Dbug/jungle-rails/blob/master/public/images/Shopping.png)
+
+- Use credit card to pay
+
+!["Pay with Credit Card"](https://github.com/Eds-Dbug/jungle-rails/blob/master/public/images/using_credit_card.png)
+
+- Thank you for your purchase
+
+!["Pay with Credit Card"](https://github.com/Eds-Dbug/jungle-rails/blob/master/public/images/receipt.png)
+
+## Database
+
+If Rails is complaining about authentication to the database, uncomment the user and password fields from `config/database.yml` in the development and test sections, and replace if necessary the user and password `development` to an existing database user.
+
+## Stripe Testing
+
+Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
+
+More information in their docs: <https://stripe.com/docs/testing#cards>
+
+## Dependencies
+
+- Rails 6.1 [Rails Guide](http://guides.rubyonrails.org/v6.1/)
+- Bootstrap 5
+- PostgreSQL 9.x
+- Stripe
