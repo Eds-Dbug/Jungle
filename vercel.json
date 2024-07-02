@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "Gemfile",
+        "use": "@vercel/ruby"
+      },
+      {
+        "src": "config.ru",
+        "use": "@vercel/ruby"
+      },
+      {
+        "src": "public/**/*",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "public/$1"
+      }
+    ]
+  }
+  
