@@ -19,14 +19,11 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  # host: localhost
-  # username: eddie
-  # password: yourpassword
   pool: 5
 
 development:
   <<: *default
-  database: jungle_development
+  database: jungle_development_1m75
   # username: development
   # password: development
 
@@ -62,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: jungle_test
+  database: jungle_development_1m75
   # username: development
   # password: development
 

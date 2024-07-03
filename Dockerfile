@@ -1,20 +1,20 @@
-# Use an official Ruby runtime as a parent image
 FROM ruby:3.1.1
 
-# Set the working directory in the container
-WORKDIR /usr/src/app
+# Install Node.js, PostgreSQL client, and ping
+RUN apt-get update && apt-get install -y nodejs postgresql-client iputils-ping
 
-# Copy the Gemfile and Gemfile.lock into the container
+# Throw errors if Gemfile has been modified since Gemfile.lock
+RUN bundle config --global frozen 1
+
+WORKDIR /app
+
 COPY Gemfile Gemfile.lock ./
-
-# Install any needed packages specified in the Gemfile
 RUN bundle install
 
-# Copy the rest of the application code into the container
 COPY . .
 
-# Make port 4567 available to the world outside this container
-EXPOSE 4567
+# Expose port 3000 to the outside world
+EXPOSE 3000
 
-# Define the command to run the application
+# Specify the command to run on container start
 CMD ["bin/rails", "s", "-b", "0.0.0.0"]
